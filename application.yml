@@ -4,6 +4,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8010/eureka/
 ---
+# spring config for noun client app only
 spring:
-  profiles: noun
+  profiles: lab4-noun
 words: boat,book,vote,seat,backpack,partition,groundhog  
