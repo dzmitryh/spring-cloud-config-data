@@ -1,32 +1,31 @@
 ---
-spring:
-  profiles: primary
-server:
-  port: 8011
+# Items that apply to ALL profiles:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8012/eureka/,http://localhost:8013/eureka/
+      defaultZone: http://localhost:8010/eureka/,http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+
 ---
 spring:
-  profiles: secondary
-server:
-  port: 8012
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8011/eureka/,http://localhost:8013/eureka/
+  profiles: subject
+words: I,You,He,She,It
+  
 ---
 spring:
-  profiles: tertiary
-server:
-  port: 8013
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8011/eureka/,http://localhost:8012/eureka/
+  profiles: verb
+words: ran,knew,had,saw,bought
+
 ---
-# spring config for noun client app only
 spring:
-  profiles: lab4-noun
-words: boat,book,vote,seat,backpack,partition,groundhog  
+  profiles: article
+words: a,the
+
+---
+spring:
+  profiles: adjective
+words: reasonable,leaky,suspicious,ordinary,unlikely
+
+---
+spring:
+  profiles: noun
+words: boat,book,vote,seat,backpack,partition,groundhog
